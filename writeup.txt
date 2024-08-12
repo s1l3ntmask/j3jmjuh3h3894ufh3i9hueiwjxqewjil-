@@ -1,0 +1,17 @@
+Black Dragon Writeup
+
+At This challenge we are having an WEB-INTERFACE, so lets look at it. 
+
+We can see a Black Dragon at the begging in the Website, if we are looking at the webpage we can find nothing interesting.
+
+Looking at the WEB-Soure we can see a comment "<!-- ./images/header.jpg  -->" if we add the file to the url withou the . we can see an Black Dragon Image.
+ 
+Now we have to get it with curl:
+curl https://s1l3ntmask.github.io/osint/hakit2/images/header.jpg -o header.jpg
+
+The only thing we can do now, is to analyze the image with exiftool:
+exiftool header.jpg
+
+After reading the output we can see an author named BoredDev091265, using the tipp from the description we can find an user in Tiktok with a profil picture from hackthebox. (I put the profile picture for the player, so they know they found the right account.)
+
+If we look at the bio we can see a link to a telegram channel wich includes the flag.
